@@ -16,11 +16,12 @@ def possibles(sudo):
             if row[i] != ".":
                 row[i] = int(row[i])
             if type(row[i]) != int:
-                row[i] = [1,2,3,4,5,6,7,8,9]
+		for num in range(1,(len(sudo)+1)):
+                	row[i].append(i)
     return sudo
 
 def solve_one(sudo):
-    for num in range(1,10):
+    for num in range(1,(len(sudo)+1)):
         for index in range(len(row)):
             for row in sudo:
                 for row_2 in sudo:
@@ -38,6 +39,18 @@ def single_option(sudo):
             if type(row[index]) == list and len(row[index]) == 1:
                 row[index] = row[index][0]
     return sudo
+
+def within_box(sudo):
+	spacing = int(len(sudo)**(1/2))
+	for row in range(1,spacing+1):
+		row_start = int(((i-1)/spacing)*len(sudo))
+		row_finish = int((i/spacing)*len(sudo))
+		row_temp = sudo[start:finish]
+			for column in range(1,spacing+1):
+				column_start = int(((i-1)/spacing)*len(sudo))
+				column_finish = int((i/spacing)*len(sudo))
+				
+					
 
 def naked_pair(sudo):
     print("what")
