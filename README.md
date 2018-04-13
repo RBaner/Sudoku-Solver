@@ -1,3 +1,3 @@
 # Sudoku-Solver
 
-A sudoku solver that does not realy on a backtracking method.
+A sudoku solver that does not rely on a backtracking method.
