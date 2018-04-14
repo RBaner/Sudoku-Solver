@@ -68,3 +68,6 @@ def main(sudo):
     single_option(sudo)
 
 print(main(sudo))
+
+
+#No need to define within(data,dataset) simply create one list for box and if (num not in box) then if type(box[index])) == list and (num in box[index]) then box[index].remove(num)
