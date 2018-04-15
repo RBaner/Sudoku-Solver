@@ -1,3 +1,10 @@
+"""
+print("Input each line with periods for blank spots and numbers where they appear")
+commands = ["First","Second","Third","Fourth","Fifth","Sixth","Seventh","Eigth","Ninth"]
+sudo = []
+for command in commands:
+	sudo.append(list(input(command+" line here: ")))
+"""
 a = ['4','3','.','5','.','.','6','.','.']
 b = ['.','.','2','1','.','3','.','.','.']
 c = ['.','.','.','4','.','2','.','7','3']
