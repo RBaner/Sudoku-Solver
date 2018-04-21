@@ -1,3 +1,3 @@
 # Sudoku-Solver
 
-A sudoku solver that does not rely on a backtracking method.
+A sudoku solver for $n^{2}xn^{2}$ that does not rely on a backtracking method.
