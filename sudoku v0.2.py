@@ -1,20 +1,24 @@
 #import numpy as np
 
 # User input for puzzle line by line
-amount = int(input("How many columns in the sudoku puzzle: "))
+while True:
+    amount = int(input("How many columns in the sudoku puzzle: "))
+    if (amount**(1/2))%1 == 0:
+        break
+    else:
+        print("That doesn't seem right. Sudoku Puzzles always have side length n^2 with n blocks per side. Try again.")
 print("Input each line with periods for blank spots and numbers where they appear with commas in between")
 print("For a row of length 9 the input would be: 4,3,.,5,.,.,6,.,.")
 sudo = []
 for num in range(1,amount+1):
-    data = input("Line %s here: " % num)
-    data = data.split(",")
-    if len(data) == amount:
-        sudo.append(data)
-    else:
-        print("That doesn't make sense, there weren't enough spots in that row. Try again!")
+    while True:
         data = input("Line %s here: " % num)
         data = data.split(",")
-        sudo.append(data)
+        if len(data) == amount:
+            sudo.append(data)
+            break
+        else:
+            print("That doesn't seem right. Each row should have the same amount of elements as the side length of the sudoku puzzles. Try again.")
 
 # This block was for testing purposes
 """
@@ -83,18 +87,7 @@ def within_box(sudo):
             for row in sudo[row_start:row_finish]:
                 row[column_start:column_finish] = box[:spacing]
                 box[:spacing] = []
-    return(sudo)
-                
-
-def naked_pair(sudo):
-    print("what")
-
-def inside(data,number):
-	for index in range(len(data)):
-		if type(data[index]) == list:
-			return inside(data[index],number)
-		elif number in data:
-			return True
+    return(sudo)        
 
 def unsolved(sudo):
     for row in sudo:
@@ -102,15 +95,14 @@ def unsolved(sudo):
             if type(index) == list:
                 return True
     return False
+
 def main(sudo):
     possibles(sudo)
     within_box(sudo)
-    x = 0
     while unsolved(sudo):
         solve_one(sudo)
         single_option(sudo)
         within_box(sudo)
-        x += 1
 #    print(np.array(sudo))
 
 main(sudo)
