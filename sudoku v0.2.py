@@ -1,4 +1,4 @@
-#import numpy as np
+import numpy as np
 
 # User input for puzzle line by line
 while True:
@@ -87,7 +87,7 @@ def within_box(sudo):
             for row in sudo[row_start:row_finish]:
                 row[column_start:column_finish] = box[:spacing]
                 box[:spacing] = []
-    return(sudo)        
+    return(sudo)
 
 def unsolved(sudo):
     for row in sudo:
